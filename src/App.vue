@@ -1,15 +1,12 @@
 <template>
-  <button @click="handler">
-    Click me!
-  </button>
+  <MyBtn />
 </template>
 
 <script>
+import MyBtn from '~/components/MyBtn.vue'
 export default { 
-  methods: {
-    handler(event) {
-      console.log(event)
-    }
+  components: {
+    MyBtn
   }
 }
 </script>
