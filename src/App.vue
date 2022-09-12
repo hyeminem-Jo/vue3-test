@@ -1,18 +1,12 @@
 <template>
-  <a
-    href="https://www.naver.com/"
-    alt=""></a>
+  <MyBtn />
 </template>
 
 <script>
+import MyBtn from '~/components/MyBtn.vue'
 export default { 
-  methods: {
-    handlerA() {
-      console.log('A')
-    },
-    handlerB() {
-      console.log('B')
-    }
+  components: {
+    MyBtn
   }
 }
 </script>
