@@ -1,18 +1,30 @@
 <template>
-  <div class="btn">
-    Apple
+  <div
+    v-bind="$attrs"
+    class="btn"
+    @click="hello">
+    <slot></slot>
   </div>
 </template>
 
-
-<style scoped>
-  .btn {
-    display: inline-block;
-    margin: 4px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    background-color: gray;
-    color: white;
-    cursor: pointer;
+<script>
+export default {
+  inheritAttrs: false,
+  props: {
+    color: {
+      type: String,
+      default: 'gray'
+    }
+  },
+  emits: ['hello'],
+  mounted() {
+    console.log(this.color)
+    console.log(this.$attrs)
+  },
+  methods: {
+    hello() {
+      this.$emit('hello')
+    }
   }
-</style>
+}
+</script>
